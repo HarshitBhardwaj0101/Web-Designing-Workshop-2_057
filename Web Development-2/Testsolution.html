@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Checker</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+        button { padding: 8px 15px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        #result { margin-top: 20px; font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <h2>Positive or Negative?</h2>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkNumber() {
+            const num = parseFloat(document.getElementById('numInput').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(num)) {
+                resultDiv.innerText = "Please enter a valid number.";
+            } else if (num > 0) {
+                resultDiv.innerText = num + " is Positive (+)";
+                resultDiv.style.color = "green";
+            } else if (num < 0) {
+                resultDiv.innerText = num + " is Negative (-)";
+                resultDiv.style.color = "red";
+            } else {
+                resultDiv.innerText = "The number is Zero.";
+                resultDiv.style.color = "blue";
+            }
+        }
+    </script>
+
+</body>
+</html>
