@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even and Odd Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f0fe;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            width: 350px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Even & Odd Number Checker</h2>
+
+        <input type="number" id="number" placeholder="Enter a number">
+        <br>
+
+        <button onclick="checkNumber()">Check</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkNumber() {
+            let num = document.getElementById("number").value;
+            let result = document.getElementById("result");
+
+            if (num === "") {
+                result.innerHTML = "Please enter a number!";
+            }
+            else if (num % 2 === 0) {
+                result.innerHTML = num + " is an Even Number";
+                result.style.color = "green";
+            }
+            else {
+                result.innerHTML = num + " is an Odd Number";
+                result.style.color = "orange";
+            }
+        }
+    </script>
+
+</body>
+</html>
